@@ -1,10 +1,10 @@
-package com.qa.accountGenerator.accountapi.service;
+package com.qa.account.accountapi.service;
 
-import com.qa.accountGenerator.accountapi.persistence.domain.PrizeAccount;
-import com.qa.accountGenerator.accountapi.persistence.repository.PrizeAccountRepository;
+import com.qa.account.accountapi.persistence.domain.PrizeAccount;
+import com.qa.account.accountapi.persistence.repository.PrizeAccountRepository;
 
 
-import com.qa.accountGenerator.accountapi.util.Prize;
+import com.qa.account.accountapi.util.Prize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
-package com.qa.accountGenerator.accountapi.rest;
+package com.qa.account.accountapi.rest;
 
-import com.qa.accountGenerator.accountapi.persistence.domain.PrizeAccount;
-import com.qa.accountGenerator.accountapi.service.PrizeAccountService;
-import com.qa.accountGenerator.accountapi.util.constants.Constants;
+import com.qa.account.accountapi.persistence.domain.PrizeAccount;
+import com.qa.account.accountapi.service.PrizeAccountService;
+import com.qa.account.accountapi.util.constants.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

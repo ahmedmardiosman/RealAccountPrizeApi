@@ -1,6 +1,6 @@
-package com.qa.accountGenerator.accountapi.service;
+package com.qa.account.accountapi.service;
 
-import com.qa.accountGenerator.accountapi.persistence.domain.PrizeAccount;
+import com.qa.account.accountapi.persistence.domain.PrizeAccount;
 import org.springframework.http.ResponseEntity;
 import java.util.List;
 

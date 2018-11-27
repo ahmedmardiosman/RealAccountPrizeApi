@@ -1,12 +1,12 @@
-package com.qa.accountGenerator.accountapi.util;
+package com.qa.account.accountapi.util;
 
-import com.qa.accountGenerator.accountapi.util.constants.Constants;
-import com.qa.accountGenerator.accountapi.util.exceptions.WrongAccountLengthException;
-import com.qa.accountGenerator.accountapi.util.exceptions.WrongAccountTypeException;
+import com.qa.account.accountapi.util.constants.Constants;
+import com.qa.account.accountapi.util.exceptions.WrongAccountLengthException;
+import com.qa.account.accountapi.util.exceptions.WrongAccountTypeException;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import static com.qa.accountGenerator.accountapi.util.constants.Constants.CASH_PRIZE_ACCOUNT_TYPE_A;
-import static com.qa.accountGenerator.accountapi.util.constants.Constants.CASH_PRIZE_ACCOUNT_TYPE_B;
+import static com.qa.account.accountapi.util.constants.Constants.CASH_PRIZE_ACCOUNT_TYPE_A;
+import static com.qa.account.accountapi.util.constants.Constants.CASH_PRIZE_ACCOUNT_TYPE_B;
 
 public class Prize {
 

@@ -5,8 +5,8 @@ import com.qa.account.accountapi.util.exceptions.WrongAccountLengthException;
 import com.qa.account.accountapi.util.exceptions.WrongAccountTypeException;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import static com.qa.account.accountapi.util.constants.Constants.CASH_PRIZE_ACCOUNT_TYPE_A;
-import static com.qa.account.accountapi.util.constants.Constants.CASH_PRIZE_ACCOUNT_TYPE_B;
+import static com.qa.account.accountapi.util.constants.Constants.CASH_PRIZE_A;
+import static com.qa.account.accountapi.util.constants.Constants.CASH_PRIZE_B;
 
 public class Prize {
 
@@ -36,18 +36,18 @@ public class Prize {
     }
 
     private int getCashPrize(String accType, int size){
-        int mult = (accType.equals(Constants.ACCOUNT_TYPE_A) ? CASH_PRIZE_ACCOUNT_TYPE_A : CASH_PRIZE_ACCOUNT_TYPE_B);
+        int cash = (accType.equals(Constants.ACCOUNT_TYPE_A) ? CASH_PRIZE_A : CASH_PRIZE_B);
 
         boolean accountLengthIsSix = size==Constants.ACCOUNT_LENGTH_SIX;
         boolean accountLengthIsEight = size==Constants.ACCOUNT_LENGTH_EIGHT;
         boolean accountLengthIsTen = size==Constants.ACCOUNT_LENGTH_TEN;
 
         if(accountLengthIsSix){
-            return mult*1;
+            return cash*1;
         }else if(accountLengthIsEight){
-            return mult*4;
+            return cash*4;
         }else if(accountLengthIsTen){
-            return mult*16;
+            return cash*16;
         }else{
             throw new WrongAccountLengthException((size-2)+"");
         }

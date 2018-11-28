@@ -10,8 +10,8 @@ public class Constants {
     public static final String ACCOUNT_TYPE_B = "B";
     public static final String ACCOUNT_TYPE_C = "C";
 
-    public static final int CASH_PRIZE_ACCOUNT_TYPE_A = 25;
-    public static final int CASH_PRIZE_ACCOUNT_TYPE_B = 50;
+    public static final int CASH_PRIZE_A = 25;
+    public static final int CASH_PRIZE_B = 50;
 
     public static final String URL_BASE = "/prize";
     public static final String URL_GET_ACCOUNTS = "/getAccounts";

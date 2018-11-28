@@ -30,7 +30,7 @@ public class Prize {
         }else if(accountType.equals(Constants.ACCOUNT_TYPE_C)){
             return 0;
         }else{
-            throw new WrongAccountTypeException(accountType.toString());
+            throw new WrongAccountTypeException(accountType);
         }
 
     }

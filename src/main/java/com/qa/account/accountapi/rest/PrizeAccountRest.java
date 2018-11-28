@@ -15,21 +15,25 @@ public class PrizeAccountRest {
     @Autowired
     private PrizeAccountService service;
 
+    @CrossOrigin(origins = "*")
     @GetMapping(Constants.URL_GET_ACCOUNTS)
     public List<PrizeAccount> getAccounts() {
         return service.getAccounts();
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping(Constants.URL_GET_ACCOUNT_BY_ID)
     public PrizeAccount getAccount(@PathVariable Long id) {
         return service.getAccount(id);
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping(Constants.URL_ADD_ACCOUNT)
     public ResponseEntity<PrizeAccount> createAccount(@RequestBody PrizeAccount prizeAccount) {
         return service.createAccount(prizeAccount);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping(Constants.URL_GET_WINNINGS)
     public int getAccount(@PathVariable String accountNum) {
         return service.getWinnings(accountNum);

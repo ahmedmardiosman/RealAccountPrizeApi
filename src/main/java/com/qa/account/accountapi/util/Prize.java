@@ -30,7 +30,7 @@ public class Prize {
         }else if(accountType.equals(Constants.ACCOUNT_TYPE_C)){
             return 0;
         }else{
-            throw new WrongAccountTypeException("Invalid Account Type Supplied. Actual: " + accountType + ". Expected: A, B, C");
+            throw new WrongAccountTypeException(accountType.toString());
         }
 
     }
@@ -49,7 +49,7 @@ public class Prize {
         }else if(accountLengthIsTen){
             return mult*16;
         }else{
-            throw new WrongAccountLengthException("Invalid Account Length Supplied. Actual: " + (size-2) + ". Expected: 6, 8, 10" );
+            throw new WrongAccountLengthException((size-2)+"");
         }
     }
 

@@ -5,6 +5,7 @@ import com.qa.account.accountapi.persistence.repository.PrizeAccountRepository;
 
 
 import com.qa.account.accountapi.util.Prize;
+import com.qa.account.accountapi.util.constants.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -38,10 +39,11 @@ public class PrizeAccountServiceImpl implements PrizeAccountService {
     @Override
     public ResponseEntity<PrizeAccount> createAccount(PrizeAccount prizeAccount) {
         prizeAccount.setPrizeWinnings(getWinnings(prizeAccount.getAccountId()));
-        prizeAccount.setDate(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
+        prizeAccount.setDate(new SimpleDateFormat(Constants.DATE_FORMAT).format(new Date()));
         PrizeAccount savedPrizeAccount = repo.save(prizeAccount);
 
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedPrizeAccount.getAccountId()).toUri();
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path(Constants.URI_LOCATION).buildAndExpand(savedPrizeAccount.getAccountId()).toUri();
 
         return ResponseEntity.created(location).build();
     }

@@ -19,4 +19,7 @@ public class Constants {
     public static final String URL_ADD_ACCOUNT = "/addAccount";
     public static final String URL_GET_WINNINGS = "/getWinnings/{accountNum}";
 
+    public static final String DATE_FORMAT = "dd-MM-yyyy";
+    public static final String URI_LOCATION = "/{id}";
+
 }

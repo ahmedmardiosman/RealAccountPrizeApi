@@ -8,15 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static com.qa.account.accountapi.util.constants.Constants.CASH_PRIZE_A;
 import static com.qa.account.accountapi.util.constants.Constants.CASH_PRIZE_B;
 
-public class Prize {
+public class PrizeCalculator {
 
     private String accNum;
 
-    public Prize(){
+    public PrizeCalculator(){
 
     }
 
-    public Prize(String accNum){
+    public PrizeCalculator(String accNum){
         this.accNum = accNum;
     }
 

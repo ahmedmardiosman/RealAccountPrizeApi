@@ -1,7 +1,7 @@
 package com.qa.account.accountapi.rest;
 
-import com.qa.account.accountapi.persistence.domain.PrizeAccount;
-import com.qa.account.accountapi.service.PrizeAccountService;
+import com.qa.account.accountapi.persistence.domain.Prize;
+import com.qa.account.accountapi.service.PrizeService;
 import com.qa.account.accountapi.util.constants.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,24 +13,24 @@ import java.util.List;
 public class PrizeAccountRest {
 
     @Autowired
-    private PrizeAccountService service;
+    private PrizeService service;
 
     @CrossOrigin(origins = Constants.CORS)
     @GetMapping(Constants.URL_GET_ACCOUNTS)
-    public List<PrizeAccount> getAccounts() {
+    public List<Prize> getAccounts() {
         return service.getAccounts();
     }
 
     @CrossOrigin(origins = Constants.CORS)
     @GetMapping(Constants.URL_GET_ACCOUNT_BY_ID)
-    public PrizeAccount getAccount(@PathVariable Long id) {
+    public Prize getAccount(@PathVariable Long id) {
         return service.getAccount(id);
     }
 
     @CrossOrigin(origins = Constants.CORS)
-    @PostMapping(Constants.URL_ADD_ACCOUNT)
-    public ResponseEntity<PrizeAccount> createAccount(@RequestBody PrizeAccount prizeAccount) {
-        return service.createAccount(prizeAccount);
+    @GetMapping(Constants.URL_ADD_ACCOUNT + "/{accountNum}")
+    public Prize createAccount(@PathVariable String accountNum) {
+        return service.createAccount(accountNum);
     }
 
     @CrossOrigin(origins = Constants.CORS)

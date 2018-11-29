@@ -1,10 +1,10 @@
 package com.qa.account.accountapi.service;
 
-import com.qa.account.accountapi.persistence.domain.PrizeAccount;
-import com.qa.account.accountapi.persistence.repository.PrizeAccountRepository;
+import com.qa.account.accountapi.persistence.domain.Prize;
+import com.qa.account.accountapi.persistence.repository.PrizeRepository;
 
 
-import com.qa.account.accountapi.util.Prize;
+import com.qa.account.accountapi.util.PrizeCalculator;
 import com.qa.account.accountapi.util.constants.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,38 +19,31 @@ import java.util.Optional;
 
 
 @Service
-public class PrizeAccountServiceImpl implements PrizeAccountService {
+public class PrizeAccountServiceImpl implements PrizeService {
 
     @Autowired
-    private PrizeAccountRepository repo;
+    private PrizeRepository repo;
 
     @Override
-    public List<PrizeAccount> getAccounts() {
+    public List<Prize> getAccounts() {
         return repo.findAll();
     }
 
     @Override
-    public PrizeAccount getAccount(Long id) {
-        Optional<PrizeAccount> account = repo.findById(id);
+    public Prize getAccount(Long id) {
+        Optional<Prize> account = repo.findById(id);
 
         return account.get();
     }
 
     @Override
-    public ResponseEntity<PrizeAccount> createAccount(PrizeAccount prizeAccount) {
-        prizeAccount.setPrizeWinnings(getWinnings(prizeAccount.getAccountId()));
-        prizeAccount.setDate(new SimpleDateFormat(Constants.DATE_FORMAT).format(new Date()));
-        PrizeAccount savedPrizeAccount = repo.save(prizeAccount);
-
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path(Constants.URI_LOCATION).buildAndExpand(savedPrizeAccount.getAccountId()).toUri();
-
-        return ResponseEntity.created(location).build();
+    public Prize createAccount(String accountNum) {
+        return new Prize(getWinnings(accountNum), new SimpleDateFormat(Constants.DATE_FORMAT).format(new Date()));
     }
 
     @Override
     public int getWinnings(String accountNum) {
-        return new Prize(accountNum).checkNumber(accountNum);
+        return new PrizeCalculator().checkNumber(accountNum);
     }
 
 

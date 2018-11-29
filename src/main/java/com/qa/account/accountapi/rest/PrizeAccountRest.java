@@ -4,7 +4,6 @@ import com.qa.account.accountapi.persistence.domain.Prize;
 import com.qa.account.accountapi.service.PrizeService;
 import com.qa.account.accountapi.util.constants.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -38,6 +37,5 @@ public class PrizeAccountRest {
     public int getAccount(@PathVariable String accountNum) {
         return service.getWinnings(accountNum);
     }
-
 
 }

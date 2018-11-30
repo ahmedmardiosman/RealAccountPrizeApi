@@ -13,15 +13,6 @@ public class Constants {
     public static final int CASH_PRIZE_A = 25;
     public static final int CASH_PRIZE_B = 50;
 
-    public static final String URL_BASE = "/prize";
-    public static final String URL_GET_ACCOUNTS = "/getAccounts";
-    public static final String URL_GET_ACCOUNT_BY_ID = "/getAccount/{id}";
-    public static final String URL_ADD_ACCOUNT = "/addAccount";
-    public static final String URL_GET_WINNINGS = "/getWinnings/{accountNum}";
-
     public static final String DATE_FORMAT = "dd-MM-yyyy";
-    public static final String URI_LOCATION = "/{id}";
-
-    public static final String CORS = "*";
 
 }
